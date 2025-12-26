@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>金門跨年．大狗零失誤作戰手冊 (Final)</title>
+    <title>金門跨年 (Final)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -323,245 +323,352 @@
                 </div>
             </div>
 
-            <!-- Lazy Pack -->
-            <div class="mt-8 mb-4 border-t border-gray-200 pt-6 px-2">
-                <div class="bg-gray-800 text-gray-200 rounded-2xl p-4 shadow-lg">
-                    <h3 class="font-bold text-white mb-3 text-center border-b border-gray-700 pb-2"><i class="fas fa-shield-alt"></i> 防雷懶人包</h3>
-                    <ul class="space-y-3 text-sm">
-                        <li class="flex gap-3">
-                            <i class="fas fa-ban text-red-400 mt-0.5"></i>
-                            <span><strong class="text-white">週三公休：</strong>談天樓 (跨年夜吃不到)。</span>
-                        </li>
-                        <li class="flex gap-3">
-                            <i class="fas fa-clock text-yellow-400 mt-0.5"></i>
-                            <span><strong class="text-white">太晚不開：</strong>金許園、永春 (不要排晚餐)。</span>
-                        </li>
-                        <li class="flex gap-3">
-                            <i class="fas fa-route text-blue-400 mt-0.5"></i>
-                            <span><strong class="text-white">跨年撤退：</strong>跟著警察指揮走，避開北堤。</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
             <div class="h-12"></div>
         </div>
     </div>
 
     <!-- FOOD VIEW: NAVIGATION LIST -->
-    <div id="view-food" class="hide fade-in p-4 max-w-md mx-auto min-h-screen">
-        <div class="flex items-center gap-2 mb-6 mt-4">
-            <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-red-600">
-                <i class="fas fa-map-marked-alt text-xl"></i>
-            </div>
-            <div>
-                <h2 class="text-xl font-bold text-gray-800">美食一鍵導航</h2>
-                <div class="text-xs text-gray-500">點擊按鈕開啟 Google Maps</div>
+    <div id="view-food" class="hide fade-in">
+        
+        <!-- Food Date Tabs -->
+        <div class="bg-white sticky top-[76px] z-40 shadow-sm overflow-x-auto no-scrollbar flex text-sm text-gray-500 font-medium border-b border-gray-100">
+            <div class="max-w-md mx-auto w-full flex">
+                <div onclick="switchFoodTab('food-day1')" id="tab-food-day1" class="tab-item active-tab flex-1 py-3 text-center">
+                    <div class="text-xs">12/30</div>
+                    <div>週二</div>
+                </div>
+                <div onclick="switchFoodTab('food-day2')" id="tab-food-day2" class="tab-item flex-1 py-3 text-center">
+                    <div class="text-xs">12/31</div>
+                    <div>週三</div>
+                </div>
+                <div onclick="switchFoodTab('food-day3')" id="tab-food-day3" class="tab-item flex-1 py-3 text-center">
+                    <div class="text-xs">01/01</div>
+                    <div>週四</div>
+                </div>
+                <div onclick="switchFoodTab('food-day4')" id="tab-food-day4" class="tab-item flex-1 py-3 text-center">
+                    <div class="text-xs">01/02</div>
+                    <div>週五</div>
+                </div>
             </div>
         </div>
 
-        <!-- Food List -->
-        <div class="space-y-3">
-            
-            <!-- Day 1 Items -->
-            <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mt-6 mb-2">Day 1 東半島</div>
-            
-            <div class="bg-white p-3 rounded-xl card-shadow flex items-center justify-between">
-                <div>
-                    <div class="font-bold text-gray-800">良金牧場工廠總店</div>
-                    <div class="text-xs text-red-600">必吃現沖溫體牛肉麵</div>
+        <div class="p-4 max-w-md mx-auto min-h-screen">
+            <div class="flex items-center gap-2 mb-6 mt-2">
+                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-red-600">
+                    <i class="fas fa-map-marked-alt text-xl"></i>
                 </div>
-                <a href="https://www.google.com/maps/search/?api=1&query=金門良金牧場工廠總店" target="_blank" class="bg-red-50 hover:bg-red-100 text-red-600 p-2 rounded-full transition-colors w-10 h-10 flex items-center justify-center">
-                    <i class="fas fa-location-arrow"></i>
-                </a>
-            </div>
-
-            <div class="bg-white p-3 rounded-xl card-shadow flex items-center justify-between">
                 <div>
-                    <div class="font-bold text-gray-800">閩式燒餅</div>
-                    <div class="text-xs text-orange-600">常提早完售，先衝</div>
-                </div>
-                <a href="https://www.google.com/maps/search/?api=1&query=金門閩式燒餅" target="_blank" class="bg-red-50 hover:bg-red-100 text-red-600 p-2 rounded-full transition-colors w-10 h-10 flex items-center justify-center">
-                    <i class="fas fa-location-arrow"></i>
-                </a>
-            </div>
-
-            <div class="bg-white p-3 rounded-xl card-shadow flex items-center justify-between">
-                <div>
-                    <div class="font-bold text-gray-800">世界炸雞</div>
-                    <div class="text-xs text-gray-500">下午茶/晚餐加菜</div>
-                </div>
-                <a href="https://www.google.com/maps/search/?api=1&query=金門世界炸雞" target="_blank" class="bg-red-50 hover:bg-red-100 text-red-600 p-2 rounded-full transition-colors w-10 h-10 flex items-center justify-center">
-                    <i class="fas fa-location-arrow"></i>
-                </a>
-            </div>
-
-            <!-- Day 2 Items -->
-            <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mt-6 mb-2">Day 2 跨年外圍</div>
-
-            <div class="bg-white p-3 rounded-xl card-shadow flex items-center justify-between">
-                <div>
-                    <div class="font-bold text-gray-800">王阿婆小吃</div>
-                    <div class="text-xs text-gray-500">文化村內，必點蚵仔煎</div>
-                </div>
-                <a href="https://www.google.com/maps/search/?api=1&query=金門王阿婆小吃" target="_blank" class="bg-red-50 hover:bg-red-100 text-red-600 p-2 rounded-full transition-colors w-10 h-10 flex items-center justify-center">
-                    <i class="fas fa-location-arrow"></i>
-                </a>
-            </div>
-
-            <div class="bg-white p-3 rounded-xl card-shadow flex items-center justify-between border border-red-200 bg-red-50">
-                <div>
-                    <div class="font-bold text-gray-800 text-gray-400 line-through">談天樓</div>
-                    <div class="text-xs text-red-600 font-bold"><i class="fas fa-ban"></i> 週三公休 (勿去)</div>
-                </div>
-                <div class="text-gray-300 p-2 w-10 h-10 flex items-center justify-center">
-                    <i class="fas fa-times"></i>
+                    <h2 class="text-xl font-bold text-gray-800">美食一鍵導航</h2>
+                    <div class="text-xs text-gray-500">依照行程日期分類</div>
                 </div>
             </div>
 
-            <div class="bg-white p-3 rounded-xl card-shadow flex items-center justify-between">
-                <div>
-                    <div class="font-bold text-gray-800">成功鍋貼</div>
-                    <div class="text-xs text-green-600">週三有開</div>
+            <!-- Food Day 1 -->
+            <div id="food-day1" class="food-content space-y-3">
+                <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Day 1 東半島</div>
+                
+                <div class="bg-white p-3 rounded-xl card-shadow flex items-center justify-between">
+                    <div>
+                        <div class="font-bold text-gray-800">良金牧場工廠總店</div>
+                        <div class="text-xs text-red-600">必吃現沖溫體牛肉麵</div>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=金門良金牧場工廠總店" target="_blank" class="bg-red-50 hover:bg-red-100 text-red-600 p-2 rounded-full transition-colors w-10 h-10 flex items-center justify-center">
+                        <i class="fas fa-location-arrow"></i>
+                    </a>
                 </div>
-                <a href="https://www.google.com/maps/search/?api=1&query=金門成功鍋貼" target="_blank" class="bg-red-50 hover:bg-red-100 text-red-600 p-2 rounded-full transition-colors w-10 h-10 flex items-center justify-center">
-                    <i class="fas fa-location-arrow"></i>
-                </a>
+
+                <div class="bg-white p-3 rounded-xl card-shadow flex items-center justify-between">
+                    <div>
+                        <div class="font-bold text-gray-800">閩式燒餅</div>
+                        <div class="text-xs text-orange-600">常提早完售，先衝</div>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=金門閩式燒餅" target="_blank" class="bg-red-50 hover:bg-red-100 text-red-600 p-2 rounded-full transition-colors w-10 h-10 flex items-center justify-center">
+                        <i class="fas fa-location-arrow"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white p-3 rounded-xl card-shadow flex items-center justify-between">
+                    <div>
+                        <div class="font-bold text-gray-800">世界炸雞</div>
+                        <div class="text-xs text-gray-500">下午茶/晚餐加菜</div>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=金門世界炸雞" target="_blank" class="bg-red-50 hover:bg-red-100 text-red-600 p-2 rounded-full transition-colors w-10 h-10 flex items-center justify-center">
+                        <i class="fas fa-location-arrow"></i>
+                    </a>
+                </div>
             </div>
 
-            <div class="bg-white p-3 rounded-xl card-shadow flex items-center justify-between">
-                <div>
-                    <div class="font-bold text-gray-800">佑昇生億</div>
-                    <div class="text-xs text-green-600">週三有開，鍋貼/熱炒</div>
+            <!-- Food Day 2 -->
+            <div id="food-day2" class="food-content space-y-3 hide">
+                <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Day 2 跨年外圍</div>
+
+                <div class="bg-white p-3 rounded-xl card-shadow flex items-center justify-between">
+                    <div>
+                        <div class="font-bold text-gray-800">王阿婆小吃</div>
+                        <div class="text-xs text-gray-500">文化村內，必點蚵仔煎</div>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=金門王阿婆小吃" target="_blank" class="bg-red-50 hover:bg-red-100 text-red-600 p-2 rounded-full transition-colors w-10 h-10 flex items-center justify-center">
+                        <i class="fas fa-location-arrow"></i>
+                    </a>
                 </div>
-                <a href="https://www.google.com/maps/search/?api=1&query=金門佑昇生億" target="_blank" class="bg-red-50 hover:bg-red-100 text-red-600 p-2 rounded-full transition-colors w-10 h-10 flex items-center justify-center">
-                    <i class="fas fa-location-arrow"></i>
-                </a>
+
+                <div class="bg-white p-3 rounded-xl card-shadow flex items-center justify-between border border-red-200 bg-red-50">
+                    <div>
+                        <div class="font-bold text-gray-800 text-gray-400 line-through">談天樓</div>
+                        <div class="text-xs text-red-600 font-bold"><i class="fas fa-ban"></i> 週三公休 (勿去)</div>
+                    </div>
+                    <div class="text-gray-300 p-2 w-10 h-10 flex items-center justify-center">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white p-3 rounded-xl card-shadow flex items-center justify-between">
+                    <div>
+                        <div class="font-bold text-gray-800">成功鍋貼</div>
+                        <div class="text-xs text-green-600">週三有開</div>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=金門成功鍋貼" target="_blank" class="bg-red-50 hover:bg-red-100 text-red-600 p-2 rounded-full transition-colors w-10 h-10 flex items-center justify-center">
+                        <i class="fas fa-location-arrow"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white p-3 rounded-xl card-shadow flex items-center justify-between">
+                    <div>
+                        <div class="font-bold text-gray-800">佑昇生億</div>
+                        <div class="text-xs text-green-600">週三有開，鍋貼/熱炒</div>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=金門佑昇生億" target="_blank" class="bg-red-50 hover:bg-red-100 text-red-600 p-2 rounded-full transition-colors w-10 h-10 flex items-center justify-center">
+                        <i class="fas fa-location-arrow"></i>
+                    </a>
+                </div>
             </div>
 
-            <div class="bg-white p-3 rounded-xl card-shadow flex items-center justify-between bg-gray-800 text-white">
-                <div>
-                    <div class="font-bold">跨年觀賞點：延平郡王祠</div>
-                    <div class="text-xs text-yellow-400">避開人潮，看莒光樓方向</div>
+            <!-- Food Day 3 -->
+            <div id="food-day3" class="food-content space-y-3 hide">
+                <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Day 3 西半島</div>
+
+                <div class="bg-white p-3 rounded-xl card-shadow flex items-center justify-between">
+                    <div>
+                        <div class="font-bold text-gray-800">永春廣東粥</div>
+                        <div class="text-xs text-red-600">只賣到13:30，務必外帶</div>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=金門永春廣東粥" target="_blank" class="bg-red-50 hover:bg-red-100 text-red-600 p-2 rounded-full transition-colors w-10 h-10 flex items-center justify-center">
+                        <i class="fas fa-location-arrow"></i>
+                    </a>
                 </div>
-                <a href="https://www.google.com/maps/search/?api=1&query=金門延平郡王祠" target="_blank" class="bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-colors w-10 h-10 flex items-center justify-center">
-                    <i class="fas fa-location-arrow"></i>
-                </a>
+
+                <div class="bg-white p-3 rounded-xl card-shadow flex items-center justify-between">
+                    <div>
+                        <div class="font-bold text-gray-800">三層樓芋頭餐館</div>
+                        <div class="text-xs text-gray-500">小金門，預約戶外座</div>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=金門三層樓芋頭餐館" target="_blank" class="bg-red-50 hover:bg-red-100 text-red-600 p-2 rounded-full transition-colors w-10 h-10 flex items-center justify-center">
+                        <i class="fas fa-location-arrow"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white p-3 rounded-xl card-shadow flex items-center justify-between">
+                    <div>
+                        <div class="font-bold text-gray-800">風獅爺文物坊</div>
+                        <div class="text-xs text-purple-600">毛澤東奶茶</div>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=金門風獅爺文物坊" target="_blank" class="bg-red-50 hover:bg-red-100 text-red-600 p-2 rounded-full transition-colors w-10 h-10 flex items-center justify-center">
+                        <i class="fas fa-location-arrow"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white p-3 rounded-xl card-shadow flex items-center justify-between">
+                    <div>
+                        <div class="font-bold text-gray-800">俊輝燒物</div>
+                        <div class="text-xs text-gray-500">戰地燒烤粥品，開到凌晨</div>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=金門俊輝燒物" target="_blank" class="bg-red-50 hover:bg-red-100 text-red-600 p-2 rounded-full transition-colors w-10 h-10 flex items-center justify-center">
+                        <i class="fas fa-location-arrow"></i>
+                    </a>
+                </div>
             </div>
 
-            <!-- Day 3 Items -->
-            <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mt-6 mb-2">Day 3 西半島</div>
-
-            <div class="bg-white p-3 rounded-xl card-shadow flex items-center justify-between">
-                <div>
-                    <div class="font-bold text-gray-800">永春廣東粥</div>
-                    <div class="text-xs text-red-600">只賣到13:30，務必外帶</div>
+            <!-- Food Day 4 -->
+            <div id="food-day4" class="food-content space-y-3 hide">
+                <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Day 4 返程</div>
+                <div class="bg-gray-100 p-4 rounded-xl text-center text-gray-500 text-sm">
+                    <i class="fas fa-plane-departure mb-2 text-2xl text-gray-300 block"></i>
+                    今日準備搭機返程，<br>建議於機場內簡單用餐或回程後再吃。
                 </div>
-                <a href="https://www.google.com/maps/search/?api=1&query=金門永春廣東粥" target="_blank" class="bg-red-50 hover:bg-red-100 text-red-600 p-2 rounded-full transition-colors w-10 h-10 flex items-center justify-center">
-                    <i class="fas fa-location-arrow"></i>
-                </a>
             </div>
 
-            <div class="bg-white p-3 rounded-xl card-shadow flex items-center justify-between">
-                <div>
-                    <div class="font-bold text-gray-800">三層樓芋頭餐館</div>
-                    <div class="text-xs text-gray-500">小金門，預約戶外座</div>
-                </div>
-                <a href="https://www.google.com/maps/search/?api=1&query=金門三層樓芋頭餐館" target="_blank" class="bg-red-50 hover:bg-red-100 text-red-600 p-2 rounded-full transition-colors w-10 h-10 flex items-center justify-center">
-                    <i class="fas fa-location-arrow"></i>
-                </a>
+            <div class="h-24"></div>
+        </div>
+    </div>
+
+    <!-- REMINDER VIEW: LAZY PACK -->
+    <div id="view-reminder" class="hide fade-in p-4 max-w-md mx-auto min-h-screen">
+        <div class="flex items-center gap-2 mb-6 mt-4">
+            <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-600">
+                <i class="fas fa-shield-alt text-xl"></i>
+            </div>
+            <div>
+                <h2 class="text-xl font-bold text-gray-800">領隊重要提醒</h2>
+                <div class="text-xs text-gray-500">防雷懶人包 & 安全鐵則</div>
+            </div>
+        </div>
+
+        <div class="space-y-4">
+            <!-- Iron Rules -->
+            <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-xl shadow-sm">
+                <h3 class="font-bold text-red-700 mb-2 flex items-center gap-2">
+                    <i class="fas fa-exclamation-circle"></i> 領隊鐵則
+                </h3>
+                <ul class="space-y-3 text-sm text-gray-700">
+                    <li class="flex gap-3 items-start">
+                        <i class="fas fa-dog mt-1 text-red-400"></i>
+                        <span><strong class="text-gray-900">大狗用餐：</strong>絕對執行「名店外帶戰術」。名店人多，派一人下車買，回車上或戶外吃最舒服。</span>
+                    </li>
+                    <li class="flex gap-3 items-start">
+                        <i class="fas fa-link mt-1 text-red-400"></i>
+                        <span><strong class="text-gray-900">牽繩不離手：</strong>跨年期間鞭炮多，戶外請全程使用長牽繩。</span>
+                    </li>
+                    <li class="flex gap-3 items-start">
+                        <i class="fas fa-plane mt-1 text-red-400"></i>
+                        <span><strong class="text-gray-900">最後登機：</strong>Day 4 務必 10:00 前抵達機場，預留充裕時間辦理寵物檢疫與託運。</span>
+                    </li>
+                </ul>
             </div>
 
-            <div class="bg-white p-3 rounded-xl card-shadow flex items-center justify-between">
-                <div>
-                    <div class="font-bold text-gray-800">風獅爺文物坊</div>
-                    <div class="text-xs text-purple-600">毛澤東奶茶</div>
-                </div>
-                <a href="https://www.google.com/maps/search/?api=1&query=金門風獅爺文物坊" target="_blank" class="bg-red-50 hover:bg-red-100 text-red-600 p-2 rounded-full transition-colors w-10 h-10 flex items-center justify-center">
-                    <i class="fas fa-location-arrow"></i>
-                </a>
+            <!-- Lazy Pack -->
+            <div class="bg-gray-800 text-gray-200 rounded-2xl p-5 shadow-lg">
+                <h3 class="font-bold text-white mb-4 text-center border-b border-gray-700 pb-2"><i class="fas fa-bolt text-yellow-400"></i> 防雷懶人包</h3>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex gap-3">
+                        <div class="bg-red-500/20 w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-red-400">
+                            <i class="fas fa-ban"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold text-white">週三公休</div>
+                            <div class="text-gray-400 text-xs">談天樓 (跨年夜吃不到，別白跑)。</div>
+                        </div>
+                    </li>
+                    <li class="flex gap-3">
+                        <div class="bg-yellow-500/20 w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-yellow-400">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold text-white">太晚不開</div>
+                            <div class="text-gray-400 text-xs">金許園、永春 (不要排晚餐時段)。</div>
+                        </div>
+                    </li>
+                    <li class="flex gap-3">
+                        <div class="bg-blue-500/20 w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-blue-400">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold text-white">跨年撤退</div>
+                            <div class="text-gray-400 text-xs">跟著警察指揮走，優先走外圍道路，避開北堤車潮。</div>
+                        </div>
+                    </li>
+                </ul>
             </div>
-
-            <div class="bg-white p-3 rounded-xl card-shadow flex items-center justify-between">
-                <div>
-                    <div class="font-bold text-gray-800">俊輝燒物</div>
-                    <div class="text-xs text-gray-500">戰地燒烤粥品，開到凌晨</div>
-                </div>
-                <a href="https://www.google.com/maps/search/?api=1&query=金門俊輝燒物" target="_blank" class="bg-red-50 hover:bg-red-100 text-red-600 p-2 rounded-full transition-colors w-10 h-10 flex items-center justify-center">
-                    <i class="fas fa-location-arrow"></i>
-                </a>
-            </div>
-
         </div>
         <div class="h-24"></div>
     </div>
 
     <!-- Bottom Navigation -->
     <div class="fixed bottom-0 w-full bg-white border-t border-gray-200 flex justify-around py-3 z-50 pb-safe">
-        <div onclick="switchView('itinerary')" id="nav-itinerary" class="nav-item flex flex-col items-center cursor-pointer nav-btn-active w-1/2 border-r border-gray-100">
+        <div onclick="switchView('itinerary')" id="nav-itinerary" class="nav-item flex flex-col items-center cursor-pointer nav-btn-active w-1/3 border-r border-gray-100">
             <i class="fas fa-calendar-alt text-xl mb-1"></i>
             <span class="text-[10px]">行程</span>
         </div>
-        <div onclick="switchView('food')" id="nav-food" class="nav-item flex flex-col items-center cursor-pointer nav-btn-inactive w-1/2">
+        <div onclick="switchView('food')" id="nav-food" class="nav-item flex flex-col items-center cursor-pointer nav-btn-inactive w-1/3 border-r border-gray-100">
             <i class="fas fa-map-location-dot text-xl mb-1"></i>
             <span class="text-[10px]">美食導航</span>
+        </div>
+        <div onclick="switchView('reminder')" id="nav-reminder" class="nav-item flex flex-col items-center cursor-pointer nav-btn-inactive w-1/3">
+            <i class="fas fa-bell text-xl mb-1"></i>
+            <span class="text-[10px]">提醒</span>
         </div>
     </div>
 
     <script>
         function switchTab(dayId) {
             // Hide all contents in itinerary view
-            document.querySelectorAll('.day-content').forEach(el => {
+            document.querySelectorAll('#view-itinerary .day-content').forEach(el => {
                 el.classList.add('hide');
             });
             // Show selected content
-            const selectedContent = document.getElementById(dayId);
-            selectedContent.classList.remove('hide');
-            
-            // Animation
-            selectedContent.classList.remove('fade-in');
-            void selectedContent.offsetWidth; 
-            selectedContent.classList.add('fade-in');
+            const selectedContent = document.querySelector('#view-itinerary #' + dayId);
+            if(selectedContent) {
+                selectedContent.classList.remove('hide');
+                // Animation
+                selectedContent.classList.remove('fade-in');
+                void selectedContent.offsetWidth; 
+                selectedContent.classList.add('fade-in');
+            }
             
             // Reset tab styles
-            document.querySelectorAll('.tab-item').forEach(el => {
+            document.querySelectorAll('#view-itinerary .tab-item').forEach(el => {
                 el.classList.remove('active-tab');
                 el.classList.remove('text-red-600');
             });
             // Set active tab style
             const activeTab = document.getElementById('tab-' + dayId);
-            activeTab.classList.add('active-tab');
+            if(activeTab) activeTab.classList.add('active-tab');
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function switchFoodTab(dayId) {
+            // Hide all contents in food view
+            document.querySelectorAll('.food-content').forEach(el => {
+                el.classList.add('hide');
+            });
+            // Show selected content
+            const selectedContent = document.getElementById(dayId);
+            if(selectedContent) {
+                selectedContent.classList.remove('hide');
+                // Animation
+                selectedContent.classList.remove('fade-in');
+                void selectedContent.offsetWidth; 
+                selectedContent.classList.add('fade-in');
+            }
+            
+            // Reset tab styles
+            document.querySelectorAll('#view-food .tab-item').forEach(el => {
+                el.classList.remove('active-tab');
+                el.classList.remove('text-red-600');
+            });
+            // Set active tab style
+            const activeTab = document.getElementById('tab-' + dayId);
+            if(activeTab) activeTab.classList.add('active-tab');
             
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function switchView(viewName) {
-            const itineraryView = document.getElementById('view-itinerary');
-            const foodView = document.getElementById('view-food');
-            const navItinerary = document.getElementById('nav-itinerary');
-            const navFood = document.getElementById('nav-food');
+            const views = {
+                itinerary: document.getElementById('view-itinerary'),
+                food: document.getElementById('view-food'),
+                reminder: document.getElementById('view-reminder')
+            };
+            
+            const navs = {
+                itinerary: document.getElementById('nav-itinerary'),
+                food: document.getElementById('nav-food'),
+                reminder: document.getElementById('nav-reminder')
+            };
 
-            if (viewName === 'itinerary') {
-                itineraryView.classList.remove('hide');
-                foodView.classList.add('hide');
-                
-                navItinerary.classList.add('nav-btn-active');
-                navItinerary.classList.remove('nav-btn-inactive');
-                navFood.classList.add('nav-btn-inactive');
-                navFood.classList.remove('nav-btn-active');
-                
-                window.scrollTo({ top: 0 });
-            } else {
-                itineraryView.classList.add('hide');
-                foodView.classList.remove('hide');
+            // Hide all views & reset all navs
+            Object.values(views).forEach(el => el.classList.add('hide'));
+            Object.values(navs).forEach(el => {
+                el.classList.remove('nav-btn-active');
+                el.classList.add('nav-btn-inactive');
+            });
 
-                navFood.classList.add('nav-btn-active');
-                navFood.classList.remove('nav-btn-inactive');
-                navItinerary.classList.add('nav-btn-inactive');
-                navItinerary.classList.remove('nav-btn-active');
-                
-                window.scrollTo({ top: 0 });
-            }
+            // Show selected view & active nav
+            views[viewName].classList.remove('hide');
+            navs[viewName].classList.add('nav-btn-active');
+            navs[viewName].classList.remove('nav-btn-inactive');
+            
+            window.scrollTo({ top: 0 });
         }
     </script>
 </body>
