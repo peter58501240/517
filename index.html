@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金門跨年．大狗零失誤作戰手冊 (Final)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f3f4f6; -webkit-tap-highlight-color: transparent; }
+        .hide { display: none; }
+        .active-tab { border-bottom: 3px solid #dc2626; color: #dc2626; font-weight: bold; }
+        .tab-item { cursor: pointer; transition: all 0.3s; }
+        .card-shadow { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+        /* 隱藏捲軸但保持功能 */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* 簡單的淡入動畫 */
+        .fade-in { animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .map-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background-color: #f3f4f6;
+            color: #4b5563;
+            padding: 4px 8px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            transition: all 0.2s;
+        }
+        .map-btn:hover {
+            background-color: #e5e7eb;
+            color: #1f2937;
+        }
+    </style>
+</head>
+<body class="pb-32 bg-gray-50">
+
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-red-800 to-red-900 text-white p-4 sticky top-0 z-50 shadow-lg">
+        <div class="flex justify-between items-center max-w-md mx-auto">
+            <div>
+                <div class="text-xs opacity-80 font-mono tracking-wider">FINAL VERSION</div>
+                <h1 class="text-xl font-bold tracking-tight">金門跨年．零失誤作戰手冊</h1>
+                <div class="text-xs mt-1 opacity-90 flex items-center gap-1">
+                    <i class="fas fa-dog"></i> 領隊鐵則：名店外帶、牽繩不離手
+                </div>
+            </div>
+            <div class="bg-white/20 p-2.5 rounded-full backdrop-blur-sm">
+                <i class="fas fa-check-double text-xl"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Date Tabs -->
+    <div class="bg-white sticky top-[76px] z-40 shadow-sm overflow-x-auto no-scrollbar flex text-sm text-gray-500 font-medium border-b border-gray-100">
+        <div class="max-w-md mx-auto w-full flex">
+            <div onclick="switchTab('day1')" id="tab-day1" class="tab-item active-tab flex-1 py-3 text-center">
+                <div class="text-xs">12/30</div>
+                <div>週二</div>
+            </div>
+            <div onclick="switchTab('day2')" id="tab-day2" class="tab-item flex-1 py-3 text-center">
+                <div class="text-xs">12/31</div>
+                <div>週三</div>
+            </div>
+            <div onclick="switchTab('day3')" id="tab-day3" class="tab-item flex-1 py-3 text-center">
+                <div class="text-xs">01/01</div>
+                <div>週四</div>
+            </div>
+            <div onclick="switchTab('day4')" id="tab-day4" class="tab-item flex-1 py-3 text-center">
+                <div class="text-xs">01/02</div>
+                <div>週五</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="p-4 max-w-md mx-auto min-h-screen">
+
+        <!-- Day 1 -->
+        <div id="day1" class="day-content fade-in">
+            <div class="flex items-center gap-2 mb-4 mt-2">
+                <div class="h-6 w-1.5 bg-red-600 rounded-full"></div>
+                <h2 class="text-lg font-bold text-gray-800">Day 1 抵達 & 沙美覓食</h2>
+            </div>
+
+            <!-- Flight Card -->
+            <div class="bg-white p-5 rounded-2xl card-shadow mb-4 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 bg-gray-100 px-3 py-1 text-xs text-gray-500 rounded-bl-xl font-mono">AE-303</div>
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center justify-center w-12 text-red-600 bg-red-50 rounded-xl h-12 self-center">
+                        <i class="fas fa-plane-departure text-xl"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-bold text-gray-800 text-lg">11:25 抵達金門</div>
+                        <div class="text-sm text-gray-500 mt-1">行動：機場取車 (檢查後座寵物墊)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lunch Card -->
+            <div class="bg-white p-4 rounded-2xl card-shadow mb-4">
+                <div class="flex gap-4 items-start">
+                    <div class="w-12 h-12 flex items-center justify-center bg-red-50 rounded-full shrink-0">
+                        <i class="fas fa-utensils text-xl text-red-600"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start">
+                            <div class="font-bold text-gray-800 text-lg">12:00 良金牧場工廠總店</div>
+                        </div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=金門良金牧場工廠總店" target="_blank" class="map-btn mt-1 mb-2">
+                            <i class="fas fa-location-arrow"></i> 導航至良金
+                        </a>
+                        <p class="text-sm text-gray-600 mt-1"><span class="font-bold text-red-700">必吃：</span>現沖溫體牛肉麵。</p>
+                        <div class="mt-2 text-xs bg-red-50 text-red-800 px-2 py-1 rounded inline-block">
+                            <i class="fas fa-dog"></i> 建議外帶或詢問半戶外區
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl card-shadow mb-4 border-l-4 border-indigo-500">
+                <div class="flex gap-4 items-start">
+                    <div class="w-12 h-12 flex items-center justify-center bg-indigo-50 rounded-full shrink-0">
+                        <i class="fas fa-bed text-xl text-indigo-600"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-bold text-gray-800 text-lg">15:00 Check-in 一朵民宿</div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=金門一朵民宿" target="_blank" class="map-btn mt-1">
+                            <i class="fas fa-location-arrow"></i> 導航至中蘭
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl card-shadow mb-4">
+                <div class="flex gap-4 items-start">
+                    <div class="w-12 h-12 flex items-center justify-center bg-orange-50 rounded-full shrink-0">
+                        <i class="fas fa-camera text-xl text-orange-600"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-bold text-gray-800 text-lg">15:30 沙美老街</div>
+                        <div class="text-xs inline-block bg-orange-100 text-orange-800 px-2 py-0.5 rounded mb-2">摩洛哥風</div>
+                        
+                        <div class="space-y-3">
+                            <div class="bg-orange-50 p-2 rounded text-sm text-gray-700">
+                                <div class="font-bold text-orange-800 flex justify-between">
+                                    <span>1. 閩式燒餅</span>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=金門閩式燒餅" target="_blank" class="text-xs underline"><i class="fas fa-map-marker-alt"></i> 導航</a>
+                                </div>
+                                <div class="text-xs mt-1">戰術：先衝！賣到16:00但常提早完售。買不到Day2再來。</div>
+                            </div>
+                            
+                            <div class="bg-orange-50 p-2 rounded text-sm text-gray-700">
+                                <div class="font-bold text-orange-800 flex justify-between">
+                                    <span>2. 世界炸雞</span>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=金門世界炸雞" target="_blank" class="text-xs underline"><i class="fas fa-map-marker-alt"></i> 導航</a>
+                                </div>
+                                <div class="text-xs mt-1">下午茶/晚餐加菜。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl card-shadow mb-4">
+                <div class="flex gap-4 items-start">
+                    <div class="w-12 h-12 flex items-center justify-center bg-cyan-50 rounded-full shrink-0">
+                        <i class="fas fa-running text-xl text-cyan-600"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-bold text-gray-800 text-lg">17:00 官澳海堤</div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=金門官澳海堤" target="_blank" class="map-btn mt-1">
+                            <i class="fas fa-location-arrow"></i> 導航
+                        </a>
+                        <p class="text-sm text-gray-500 mt-1">東半島最北端，海景開闊人少，遛狗放電首選。</p>
+                        <div class="mt-2 text-xs text-gray-500 border-t pt-2 border-dashed">
+                            <i class="fas fa-drumstick-bite"></i> 18:30 晚餐：沙美商圈外帶 (鹽酥雞/廣東粥)。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div id="day2" class="day-content hide fade-in">
+            <div class="flex items-center gap-2 mb-4 mt-2">
+                <div class="h-6 w-1.5 bg-red-600 rounded-full"></div>
+                <h2 class="text-lg font-bold text-gray-800">Day 2 跨年外圍戰術</h2>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl card-shadow mb-4">
+                <div class="flex gap-4 items-start">
+                    <div class="w-12 h-12 flex items-center justify-center bg-red-50 rounded-full shrink-0">
+                        <i class="fas fa-archway text-xl text-red-700"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-bold text-gray-800 text-lg">10:00 山后民俗文化村</div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=金門山后民俗文化村" target="_blank" class="map-btn mt-1 mb-2">
+                            <i class="fas fa-location-arrow"></i> 導航
+                        </a>
+                        <p class="text-sm text-gray-500">補買：若昨天沒買到燒餅，今早先去沙美買再過來。</p>
+                        
+                        <div class="mt-3 bg-red-50 p-2.5 rounded-lg">
+                            <div class="font-bold text-red-800 text-sm flex items-center justify-between">
+                                <span>12:00 午餐：王阿婆小吃</span>
+                                <a href="https://www.google.com/maps/search/?api=1&query=金門王阿婆小吃" target="_blank" class="text-xs underline"><i class="fas fa-map-marker-alt"></i></a>
+                            </div>
+                            <div class="text-xs text-gray-600 mt-1">必點蚵仔煎。戶外石桌椅大狗友善。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl card-shadow mb-4">
+                <div class="flex gap-4 items-start">
+                    <div class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-full shrink-0">
+                        <i class="fas fa-camera text-xl text-gray-600"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-bold text-gray-800 text-lg">14:00 拍照散步</div>
+                         <div class="space-x-1 mt-1">
+                            <a href="https://www.google.com/maps/search/?api=1&query=金門船型堡" target="_blank" class="map-btn"><i class="fas fa-location-arrow"></i> 船型堡</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=金門新湖漁港" target="_blank" class="map-btn"><i class="fas fa-location-arrow"></i> 新湖漁港</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dinner & Countdown Strategy -->
+            <div class="bg-white p-4 rounded-2xl card-shadow mb-4 border-l-4 border-yellow-500">
+                <div class="flex items-center gap-2 mb-2">
+                    <i class="fas fa-exclamation-triangle text-yellow-500"></i>
+                    <h3 class="font-bold text-gray-800">17:00 跨年晚餐 (避雷區)</h3>
+                </div>
+                <div class="text-sm text-gray-600 mb-2">重點：19:00 前買完，直接去觀賞點野餐。</div>
+                
+                <div class="bg-red-50 border border-red-100 p-2 rounded mb-3 text-xs text-red-700">
+                    <span class="font-bold">⚠️ 絕對不要去：談天樓</span> (週三公休！)
+                </div>
+
+                <div class="space-y-2">
+                    <div class="flex justify-between items-center bg-gray-50 p-2 rounded">
+                        <div>
+                            <div class="text-sm font-bold text-gray-700">推薦1：成功鍋貼</div>
+                            <div class="text-xs text-gray-500">通常週二休，週三有開</div>
+                        </div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=金門成功鍋貼" target="_blank" class="map-btn"><i class="fas fa-location-arrow"></i> 導航</a>
+                    </div>
+                    <div class="flex justify-between items-center bg-gray-50 p-2 rounded">
+                        <div>
+                            <div class="text-sm font-bold text-gray-700">推薦2：佑昇生億</div>
+                            <div class="text-xs text-gray-500">鍋貼/熱炒，週三有開</div>
+                        </div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=金門佑昇生億" target="_blank" class="map-btn"><i class="fas fa-location-arrow"></i> 導航</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 跨年戰術卡片 -->
+            <div class="bg-gradient-to-br from-gray-900 to-gray-800 text-white p-5 rounded-2xl card-shadow mb-4 relative overflow-hidden border border-gray-700">
+                <div class="flex items-center gap-2 mb-3">
+                    <i class="fas fa-crosshairs text-yellow-400 animate-pulse"></i>
+                    <h3 class="font-bold text-lg text-yellow-400">跨年作戰指令</h3>
+                </div>
+                
+                <div class="space-y-4">
+                    <div>
+                        <div class="text-xs text-gray-400 mb-1">20:30 觀賞點 (避開人潮)</div>
+                        <div class="font-bold text-lg flex items-center gap-2">
+                            延平郡王祠 (夏墅)
+                            <a href="https://www.google.com/maps/search/?api=1&query=金門延平郡王祠" target="_blank" class="text-xs bg-white/20 px-2 py-1 rounded hover:bg-white/30 transition"><i class="fas fa-location-arrow"></i> 導航</a>
+                        </div>
+                        <p class="text-xs text-gray-300 mt-1">就位：廟前廣場或步道。</p>
+                        <p class="text-xs text-yellow-200 mt-1"><i class="fas fa-eye"></i> 視線朝向：「金城石雕公園／莒光樓」天空開闊處。</p>
+                    </div>
+
+                    <div class="flex items-start gap-3 border-t border-gray-700 pt-3">
+                        <div class="text-center">
+                            <div class="text-lg font-bold font-mono text-white">23:40</div>
+                            <div class="text-[10px] text-gray-400">DEADLINE</div>
+                        </div>
+                        <div class="text-xs text-gray-300">
+                            <span class="font-bold text-yellow-400">大狗回車上。</span>窗留縫、放音樂。人可在車邊看。
+                        </div>
+                    </div>
+                    
+                    <div class="text-xs text-center text-gray-500 pt-1">
+                        00:15 撤退：依交管，優先走外圍避開北堤/市區。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div id="day3" class="day-content hide fade-in">
+            <div class="flex items-center gap-2 mb-4 mt-2">
+                <div class="h-6 w-1.5 bg-red-600 rounded-full"></div>
+                <h2 class="text-lg font-bold text-gray-800">Day 3 睡飽 & 西半島名店</h2>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl card-shadow mb-4">
+                <div class="flex gap-4 items-start">
+                    <div class="w-12 h-12 flex items-center justify-center bg-yellow-50 rounded-full shrink-0">
+                        <i class="fas fa-coffee text-xl text-yellow-600"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-bold text-gray-800 text-lg">10:30 早餐：永春廣東粥</div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=金門永春廣東粥" target="_blank" class="map-btn mt-1 mb-2">
+                            <i class="fas fa-location-arrow"></i> 導航
+                        </a>
+                        <div class="text-xs bg-red-50 text-red-700 p-2 rounded">
+                            <i class="fas fa-exclamation-circle"></i> 只賣到 13:30。人多，絕對外帶去海邊吃。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl card-shadow mb-4">
+                <div class="flex gap-4 items-start">
+                    <div class="w-12 h-12 flex items-center justify-center bg-cyan-50 rounded-full shrink-0">
+                        <i class="fas fa-water text-xl text-cyan-600"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-bold text-gray-800 text-lg">11:00 歐厝沙灘</div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=金門歐厝沙灘" target="_blank" class="map-btn mt-1">
+                            <i class="fas fa-location-arrow"></i> 導航
+                        </a>
+                        <p class="text-sm text-gray-500 mt-1">沉睡戰車。趁早去跑跑。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl card-shadow mb-4">
+                <div class="flex gap-4 items-start">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full shrink-0">
+                        <i class="fas fa-bridge text-xl text-blue-500"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-bold text-gray-800 text-lg">13:00 小金門午餐</div>
+                        <div class="text-sm font-bold text-gray-700 mt-1">三層樓芋頭餐館</div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=金門三層樓芋頭餐館" target="_blank" class="map-btn mt-1 mb-2">
+                            <i class="fas fa-location-arrow"></i> 導航
+                        </a>
+                        <div class="text-xs text-gray-500 mb-3"><i class="fas fa-phone"></i> 預約戶外/角落座。</div>
+                        
+                        <div class="border-t border-gray-100 pt-3">
+                            <div class="text-sm font-bold text-gray-800 mb-1">15:00 景點</div>
+                            <div class="space-x-1">
+                                <a href="https://www.google.com/maps/search/?api=1&query=金門沙溪堡" target="_blank" class="map-btn"><i class="fas fa-camera"></i> 沙溪堡</a>
+                                <a href="https://www.google.com/maps/search/?api=1&query=金門雙口海灘" target="_blank" class="map-btn"><i class="fas fa-camera"></i> 雙口海灘</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl card-shadow mb-4">
+                <div class="flex gap-4 items-start">
+                    <div class="w-12 h-12 flex items-center justify-center bg-purple-50 rounded-full shrink-0">
+                        <i class="fas fa-glass-cheers text-xl text-purple-600"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-bold text-gray-800 text-lg">16:30 水頭聚落</div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=金門風獅爺文物坊" target="_blank" class="map-btn mt-1 mb-2">
+                            <i class="fas fa-location-arrow"></i> 導航至風獅爺文物坊
+                        </a>
+                        <p class="text-sm text-gray-600"><span class="font-bold text-purple-700">必喝：</span>毛澤東奶茶。</p>
+                        <div class="text-xs text-gray-400 mt-1">(若沒開改買附近飲料，別硬塞)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl card-shadow mb-4">
+                <div class="flex gap-4 items-start">
+                    <div class="w-12 h-12 flex items-center justify-center bg-orange-50 rounded-full shrink-0">
+                        <i class="fas fa-fire text-xl text-orange-600"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-bold text-gray-800 text-lg">18:00 晚餐：俊輝燒物</div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=金門俊輝燒物" target="_blank" class="map-btn mt-1 mb-2">
+                            <i class="fas fa-location-arrow"></i> 導航
+                        </a>
+                        <p class="text-sm text-gray-600">戰地燒烤、粥品。開到凌晨，不怕餓肚子。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div id="day4" class="day-content hide fade-in">
+            <div class="flex items-center gap-2 mb-4 mt-2">
+                <div class="h-6 w-1.5 bg-red-600 rounded-full"></div>
+                <h2 class="text-lg font-bold text-gray-800">Day 4 機場周邊 & 回家</h2>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl card-shadow mb-4">
+                <div class="flex gap-4 items-start">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full shrink-0">
+                        <i class="fas fa-water text-xl text-blue-500"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-bold text-gray-800 text-lg">08:30 尚義海堤</div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=金門尚義海堤" target="_blank" class="map-btn mt-1">
+                            <i class="fas fa-location-arrow"></i> 導航
+                        </a>
+                        <p class="text-sm text-gray-500 mt-1">就在機場旁。若爬不起來去北山，直接來這裡散步最穩。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Return Flight Card -->
+            <div class="bg-white p-5 rounded-2xl card-shadow mb-4 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 bg-gray-100 px-3 py-1 text-xs text-gray-500 rounded-bl-xl font-mono">AE-304</div>
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center justify-center w-12 text-red-600 bg-red-50 rounded-xl h-12 self-center">
+                        <i class="fas fa-plane-arrival text-xl"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start">
+                            <div class="font-bold text-gray-800 text-lg">12:10 起飛</div>
+                        </div>
+                        
+                        <div class="mt-3 flex items-start gap-2 text-xs text-red-600 bg-red-50 px-3 py-2 rounded-lg border border-red-100">
+                            <i class="fas fa-clock mt-0.5"></i>
+                            <div>
+                                <div class="font-bold">10:00 務必抵達機場</div>
+                                <span class="opacity-80">辦理還車、寵物檢疫與託運。</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lazy Pack / Footer Info -->
+        <div class="mt-8 mb-4 border-t border-gray-200 pt-6 px-2">
+            <div class="bg-gray-800 text-gray-200 rounded-2xl p-4 shadow-lg">
+                <h3 class="font-bold text-white mb-3 text-center border-b border-gray-700 pb-2"><i class="fas fa-shield-alt"></i> 防雷懶人包</h3>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex gap-3">
+                        <i class="fas fa-ban text-red-400 mt-0.5"></i>
+                        <span><strong class="text-white">週三公休：</strong>談天樓 (跨年夜吃不到，別白跑)。</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <i class="fas fa-clock text-yellow-400 mt-0.5"></i>
+                        <span><strong class="text-white">太晚不開：</strong>金許園、永春 (不要排晚餐時段)。</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <i class="fas fa-route text-blue-400 mt-0.5"></i>
+                        <span><strong class="text-white">跨年撤退：</strong>跟著警察指揮走，優先走外圍道路，避開北堤車潮。</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="h-12"></div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="fixed bottom-0 w-full bg-white border-t border-gray-200 flex justify-around py-3 z-50 text-[10px] text-gray-400 pb-safe">
+        <div onclick="switchNav(this)" class="nav-item flex flex-col items-center text-red-600 cursor-pointer active-nav">
+            <i class="fas fa-calendar-alt text-xl mb-1"></i>
+            <span>行程</span>
+        </div>
+        <div onclick="showToast('地圖連結已全部更新！')" class="nav-item flex flex-col items-center hover:text-red-400 cursor-pointer transition-colors">
+            <i class="fas fa-map-marked-alt text-xl mb-1"></i>
+            <span>導航</span>
+        </div>
+        <div onclick="showToast('點擊行程卡片查看細節')" class="nav-item flex flex-col items-center hover:text-red-400 cursor-pointer transition-colors">
+            <i class="fas fa-info-circle text-xl mb-1"></i>
+            <span>資訊</span>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-4 py-2 rounded-full text-sm opacity-0 transition-opacity duration-300 pointer-events-none z-50 whitespace-nowrap">
+        Notification
+    </div>
+
+    <script>
+        function switchTab(dayId) {
+            // Hide all contents
+            document.querySelectorAll('.day-content').forEach(el => {
+                el.classList.add('hide');
+            });
+            // Show selected content
+            const selectedContent = document.getElementById(dayId);
+            selectedContent.classList.remove('hide');
+            
+            // Re-trigger animation
+            selectedContent.classList.remove('fade-in');
+            void selectedContent.offsetWidth; // trigger reflow
+            selectedContent.classList.add('fade-in');
+            
+            // Reset tab styles
+            document.querySelectorAll('.tab-item').forEach(el => {
+                el.classList.remove('active-tab');
+                el.classList.remove('text-red-600');
+            });
+            // Set active tab style
+            const activeTab = document.getElementById('tab-' + dayId);
+            activeTab.classList.add('active-tab');
+            
+            // Scroll to top of content smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.style.opacity = '1';
+            setTimeout(() => {
+                toast.style.opacity = '0';
+            }, 2000);
+        }
+
+        function switchNav(element) {
+            // 只是視覺效果
+            document.querySelectorAll('.nav-item').forEach(el => {
+                el.classList.remove('text-red-600');
+                el.classList.add('text-gray-400');
+            });
+            element.classList.remove('text-gray-400');
+            element.classList.add('text-red-600');
+        }
+    </script>
+</body>
+</html>
